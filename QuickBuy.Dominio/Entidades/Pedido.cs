@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace QuickBuy.Dominio.Entidades
 {
-    class Pedido
+    public class Pedido
     {
         public int Id { get; set; }
         public DateTime DataPedido { get; set; }
