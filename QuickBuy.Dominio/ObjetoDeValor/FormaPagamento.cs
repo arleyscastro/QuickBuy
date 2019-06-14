@@ -6,7 +6,7 @@ namespace QuickBuy.Dominio.ObjetoDeValor
     public class FormaPagamento
     {
         public int Id { get; set; }
-        public string Nomme { get; set; }
+        public string Nome { get; set; }
         public DateTime DataPedido { get; set; }
         public bool EhBoleto
         {
