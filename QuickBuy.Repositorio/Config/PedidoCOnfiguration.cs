@@ -12,18 +12,15 @@ namespace QuickBuy.Repositorio.Config
 
             builder.Property(p => p.CEP)
                 .IsRequired()
-                .HasMaxLength(10)
-                .HasColumnType("VarChar");
+                .HasMaxLength(10);
 
             builder.Property(p => p.Cidade)
                 .IsRequired()
-                .HasMaxLength(80)
-                .HasColumnType("VarChar");
+                .HasMaxLength(80);
 
             builder.Property(p => p.EnderecoCompleto)
                 .IsRequired()
-                .HasMaxLength(255)
-                .HasColumnType("VarChar");
+                .HasMaxLength(255);
 
             builder.Property(p => p.DataPedido)
                 .IsRequired();
@@ -33,11 +30,13 @@ namespace QuickBuy.Repositorio.Config
 
             builder.Property(p => p.Estado)
                 .IsRequired()
-                .HasMaxLength(100)
-                .HasColumnType("Char");
+                .HasMaxLength(100);
 
             builder.Property(p => p.FormaPagamentoId)
                 .IsRequired();
+
+            //pode ser opcional, porque definimos o relacionamento na classe usuario que e 1 usuario para muitos pedidos
+            builder.HasOne(p => p.Usuario);
         }
     }
 }

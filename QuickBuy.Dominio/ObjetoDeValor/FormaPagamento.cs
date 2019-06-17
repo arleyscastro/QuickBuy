@@ -14,6 +14,7 @@ namespace QuickBuy.Dominio.ObjetoDeValor
             {
                 return Id == (int)TipoFormaPagamentoEnum.Boleto;
             }
+            set { Id = 0; }
         }
         public bool Ehcartao
         {
@@ -21,6 +22,7 @@ namespace QuickBuy.Dominio.ObjetoDeValor
             {
                 return Id == (int)TipoFormaPagamentoEnum.Cartao;
             }
+            set { Id = 0; }
         }
         public bool EhDeposito
         {
@@ -28,6 +30,7 @@ namespace QuickBuy.Dominio.ObjetoDeValor
             {
                 return Id == (int)TipoFormaPagamentoEnum.Deposito;
             }
+            set { Id = 0; }
         }
         public bool EhNaoDefinido
         {
@@ -35,6 +38,7 @@ namespace QuickBuy.Dominio.ObjetoDeValor
             {
                 return Id == (int)TipoFormaPagamentoEnum.NaoDefinido;
             }
+            set { Id = 0; }
         }
     }
 }

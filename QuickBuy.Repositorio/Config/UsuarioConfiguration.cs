@@ -12,25 +12,22 @@ namespace QuickBuy.Repositorio.Config
 
             builder.Property(u => u.Email)
                    .IsRequired()
-                   .HasMaxLength(50)
-                   .HasColumnType("VarChar");
+                   .HasMaxLength(50);
 
             builder.Property(u => u.Nome)
                 .IsRequired()
-                .HasMaxLength(255)
-                .HasColumnType("VarChar");
+                .HasMaxLength(255);
 
             builder.Property(u => u.Senha)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("VarChar");
+                .HasMaxLength(50);
 
             builder.Property(u => u.Senha)
                 .IsRequired()
-                .HasMaxLength(400)
-                .HasColumnType("VarChar");
+                .HasMaxLength(400);
 
-            //builder.Property(u => u.Pedidos);
+            builder.HasMany(u => u.Pedidos)
+                .WithOne(p => p.Usuario);
         }
     }
 }

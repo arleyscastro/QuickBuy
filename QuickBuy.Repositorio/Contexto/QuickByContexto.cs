@@ -20,12 +20,30 @@ namespace QuickBuy.Repositorio.Contexto
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /// CRiar as classes de mapeamento aqui ..
+            /// Criar as classes de mapeamento aqui ..
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
             modelBuilder.ApplyConfiguration(new PedidoConfiguration());
             modelBuilder.ApplyConfiguration(new ItemPedidoConfiguration());
             modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+
+            //modelBuilder.Entity<FormaPagamento>().HasData(
+            //    new FormaPagamento()
+            //    {
+            //        Id = 1,
+            //        Nome = "Boleto", 
+
+            //    }, new FormaPagamento()
+            //    {
+            //        Id = 2,
+            //        Nome = "Cartão de crédito",
+
+            //    }, new FormaPagamento()
+            //    {
+            //        Id = 3,
+            //        Nome = "Depósito",
+
+            //    });
 
 
             base.OnModelCreating(modelBuilder);

@@ -12,23 +12,18 @@ namespace QuickBuy.Repositorio.Config
 
             builder.Property(f => f.Nome)
                 .IsRequired()
-                .HasMaxLength(155)
-                .HasColumnType("Varchar");
+                .HasMaxLength(155);
 
             builder.Property(f => f.DataPedido)
                 .IsRequired();
 
-            builder.Property(f => f.EhBoleto)
-                .HasColumnType("Bit");
+            builder.Property(f => f.EhBoleto);
 
-            builder.Property(f => f.EhDeposito)
-                .HasColumnType("Bit");
+            builder.Property(f => f.EhDeposito);
 
-            builder.Property(f => f.EhNaoDefinido)
-                .HasColumnType("Bit");
+            builder.Property(f => f.EhNaoDefinido);
 
-            builder.Property(f => f.Ehcartao)
-                .HasColumnType("Bit");
+            builder.Property(f => f.Ehcartao);
 
         }
     }
