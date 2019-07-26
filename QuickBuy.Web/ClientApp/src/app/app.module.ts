@@ -12,6 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProdutoComponent } from './produto/produto.component';
 import Logincomponent = require("./usuario/login/login.component");
 import LoginComponent = Logincomponent.LoginComponent;
+import { UsuarioServico } from './servicos/usuario/usuario.servico';
+import { Usuario } from "./modelo/usuario.model";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import LoginComponent = Logincomponent.LoginComponent;
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    Usuario
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +37,7 @@ import LoginComponent = Logincomponent.LoginComponent;
       { path: 'entar', component: LoginComponent}
     ])
   ],
-  providers: [],
+  providers: [UsuarioServico],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
