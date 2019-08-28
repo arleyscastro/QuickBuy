@@ -5,17 +5,14 @@
         public int Id { get; set; }
         public int ProdutoId { get; set; }
         public int Quantidade { get; set; }
+
         public override void Validate()
         {
-            LimparMensagensDeValidacao();
-
-            if (ProdutoId==0)
-                AdicionalCritica("ERRO: Informe um produto");
+            if (ProdutoId == 0)
+                AdicionarCritica("Não foi identificado qual a referência do produto");
             
-            if(Quantidade==0)
-                AdicionalCritica("ERRO: Informe a quantidade");
-
-            
+            if (Quantidade == 0)
+                AdicionarCritica("Quantidade não foi informado");
         }
     }
 }

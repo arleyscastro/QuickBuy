@@ -1,30 +1,34 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using QuickBuy.Dominio.Contratos;
 using QuickBuy.Dominio.Entidades;
+using System;
+using System.Linq;
 
 namespace QuickBuy.Web.Controllers
 {
-    [Route("api/[controller]")]
-    public class ProdutoController: Controller
+    [Route("api/[Controller]")]
+    public class ProdutoController : Controller
     {
+
         private readonly IProdutoRepositorio _produtoRepositorio;
         public ProdutoController(IProdutoRepositorio produtoRepositorio)
-        {
+        {            
             _produtoRepositorio = produtoRepositorio;
         }
-
+        
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
                 return Ok(_produtoRepositorio.ObterTodos());
-            }
-            catch (Exception e)
+                //if(condicao == false)
+                //{
+                //    return BadRequest("")
+                //}
+            }catch(Exception ex)
             {
-                Console.WriteLine(e);
-                return BadRequest(e.ToString());
+                return BadRequest(ex.ToString());
             }
         }
 
@@ -32,14 +36,13 @@ namespace QuickBuy.Web.Controllers
         public IActionResult Post([FromBody]Produto produto)
         {
             try
-            {
-                _produtoRepositorio.Adicioar(produto);
+            {                
+                _produtoRepositorio.Adicionar(produto);
                 return Created("api/produto", produto);
-            }
-            catch (Exception e)
+
+            }catch(Exception ex)
             {
-                Console.WriteLine(e);
-                return BadRequest(e.ToString());
+                return BadRequest(ex.ToString());
             }
         }
     }

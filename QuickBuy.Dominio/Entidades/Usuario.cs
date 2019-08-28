@@ -11,19 +11,17 @@ namespace QuickBuy.Dominio.Entidades
         public string SobreNome { get; set; }
 
         /// <summary>
-        /// Ususario pode ter nenhum ou muntos pedidos
+        /// Um Usuario Pode ter nenhum ou muitos pedidos
         /// </summary>
         public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
         {
-            LimparMensagensDeValidacao();
-
-            if (string.IsNullOrEmpty(Nome))
-                AdicionalCritica("ERRO: Informe um nome");
-
             if (string.IsNullOrEmpty(Email))
-                AdicionalCritica("ERRO: Informe um E-mail");
+                AdicionarCritica("Email não foi informado");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarCritica("Senha não foi informado");
         }
     }
 }

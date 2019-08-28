@@ -1,5 +1,4 @@
-﻿using QuickBuy.Dominio.Enumeradores;
-using System;
+﻿using QuickBuy.Dominio.Enumerados;
 
 namespace QuickBuy.Dominio.ObjetoDeValor
 {
@@ -7,38 +6,27 @@ namespace QuickBuy.Dominio.ObjetoDeValor
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public DateTime DataPedido { get; set; }
+        public string Descricao { get; set; }
+
         public bool EhBoleto
         {
-            get
-            {
-                return Id == (int)TipoFormaPagamentoEnum.Boleto;
-            }
-            set { Id = 0; }
+            get { return Id  == (int)TipoFormaPagamentoEnum.Boleto; }
         }
-        public bool Ehcartao
+
+        public bool EhCartaoCredito
         {
-            get
-            {
-                return Id == (int)TipoFormaPagamentoEnum.Cartao;
-            }
-            set { Id = 0; }
+            get { return Id == (int)TipoFormaPagamentoEnum.CartaoCredito; }
         }
+
         public bool EhDeposito
         {
-            get
-            {
-                return Id == (int)TipoFormaPagamentoEnum.Deposito;
-            }
-            set { Id = 0; }
+            get { return Id == (int)TipoFormaPagamentoEnum.Deposito; }
         }
-        public bool EhNaoDefinido
+
+        public bool NaoFoiDefinido
         {
-            get
-            {
-                return Id == (int)TipoFormaPagamentoEnum.NaoDefinido;
-            }
-            set { Id = 0; }
+            get { return Id == (int)TipoFormaPagamentoEnum.NaoDefinido; }
         }
+
     }
 }
